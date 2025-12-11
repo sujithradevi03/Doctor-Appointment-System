@@ -144,6 +144,19 @@ app.get('/test-db', async (req, res) => {
     }
 });
 
+// Add specific CORS configuration
+const corsOptions = {
+    origin: [
+        'https://your-netlify-site.netlify.app',
+        'http://localhost:3001',
+        'http://localhost:3000'
+    ],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 // 1. Get all doctors
 app.get('/api/doctors', async (req, res) => {
     if (!pool) {
