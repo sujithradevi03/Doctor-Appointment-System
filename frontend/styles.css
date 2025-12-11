@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
@@ -15,26 +15,21 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     overflow: hidden;
 }
 
-header {
+.header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 30px;
     text-align: center;
 }
 
-header h1 {
+.header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2em;
-    opacity: 0.9;
 }
 
 .tabs {
@@ -43,74 +38,39 @@ header p {
     border-bottom: 2px solid #e9ecef;
 }
 
-.tab-button {
+.tab-btn {
     flex: 1;
     padding: 15px;
     background: none;
     border: none;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 16px;
     transition: all 0.3s;
 }
 
-.tab-button.active {
+.tab-btn.active {
     background: white;
     border-bottom: 3px solid #667eea;
-    font-weight: bold;
     color: #667eea;
+    font-weight: bold;
 }
 
-.tab-content {
+.content {
     padding: 30px;
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-h2 {
-    color: #333;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #f0f0f0;
-}
-
-.loading {
-    text-align: center;
-    padding: 40px;
-    color: #666;
-}
-
-.doctors-list, .slots-list, .bookings-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
 }
 
 .card {
     background: white;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
+    margin: 15px 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .card h3 {
-    color: #667eea;
+    color: #333;
     margin-bottom: 10px;
-}
-
-.card p {
-    color: #666;
-    margin: 5px 0;
 }
 
 .available {
@@ -118,9 +78,19 @@ h2 {
     font-weight: bold;
 }
 
-.booked {
-    color: #dc3545;
-    font-weight: bold;
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #5a6fd8;
 }
 
 .form-group {
@@ -130,114 +100,41 @@ h2 {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
     font-weight: 500;
 }
 
-.form-group input,
-.form-group select {
+.form-group input {
     width: 100%;
     padding: 10px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #667eea;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-.btn-secondary {
-    background: #6c757d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none !important;
-}
-
-#booking-result {
-    margin-top: 30px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
 }
 
 .success {
-    color: #28a745;
     background: #d4edda;
+    color: #155724;
     padding: 15px;
     border-radius: 5px;
     margin: 10px 0;
 }
 
 .error {
-    color: #dc3545;
     background: #f8d7da;
+    color: #721c24;
     padding: 15px;
     border-radius: 5px;
     margin: 10px 0;
 }
 
-.admin-section {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+.hidden {
+    display: none;
 }
 
-footer {
+.footer {
     text-align: center;
     padding: 20px;
     background: #f8f9fa;
     color: #666;
-    border-top: 1px solid #e0e0e0;
-}
-
-.status {
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
-.status.online {
-    background: #d4edda;
-    color: #155724;
-}
-
-.status.offline {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-@media (max-width: 768px) {
-    .doctors-list, .slots-list, .bookings-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .tabs {
-        flex-direction: column;
-    }
+    border-top: 1px solid #ddd;
 }
